@@ -47,11 +47,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         let myEntity: NSEntityDescription! = NSEntityDescription.entityForName("MyCoreDataStore", inManagedObjectContext: myContext)
         
-        var newData = MyCoreDataStore(entity: myEntity, insertIntoManagedObjectContext: myContext)
-        newData.statement = myTextField.text
+        let newData = MyCoreDataStore(entity: myEntity, insertIntoManagedObjectContext: myContext)
+        newData.statement = myTextField.text!
         newData.time = NSDate()
         
-        myContext.save(nil)
+        // Migration 追加⑤
+        newData.name = "KentarOu"
+        
+        do {
+            try myContext.save()
+        } catch _ {
+        }
         
         readData()
     }
@@ -63,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let myRequest: NSFetchRequest = NSFetchRequest(entityName: "MyCoreDataStore")
         myRequest.returnsObjectsAsFaults = false
         
-        myCoreDataObj = myContext.executeFetchRequest(myRequest, error: nil)!
+        myCoreDataObj = try! myContext.executeFetchRequest(myRequest)
         
         
         myDataModel = []
@@ -84,7 +90,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         let coreDetaModel: AnyObject = myCoreDataObj[indexPath.row]
         myContext.deleteObject(coreDetaModel as! NSManagedObject)
-        myContext.save(nil)
+        do {
+            try myContext.save()
+        } catch _ {
+        }
         
         readData()
     }
@@ -100,7 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         deleteData(indexPath)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view .endEditing(true)
     }
     
@@ -111,7 +120,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier:"MyCell" )
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier:"MyCell" )
         
         cell.textLabel!.sizeToFit()
         cell.textLabel!.textColor = UIColor.blackColor()

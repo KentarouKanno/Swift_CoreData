@@ -12,6 +12,9 @@ import CoreData
 @objc(MyCoreDataStore)
 class MyCoreDataStore: NSManagedObject {
     
+    // Migration 追加③
+    @NSManaged var name: String
+    
     @NSManaged var statement:String
     @NSManaged var time:NSDate
     

@@ -42,6 +42,7 @@
 		3615D7ED1B76FD0F00991CE7 /* Swift_CoreData_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_CoreData_Tests.swift; sourceTree = "<group>"; };
 		3615D7F91B76FF8100991CE7 /* MyCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoreDataStore.swift; sourceTree = "<group>"; };
 		3615D7FB1B770A4B00991CE7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		36A585641C6A32F400428873 /* Swift_CoreData_ 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Swift_CoreData_ 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +166,8 @@
 		3615D7C71B76FD0F00991CE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = KentarOu;
 				TargetAttributes = {
@@ -421,6 +424,7 @@
 				3615D7F31B76FD0F00991CE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3615D7F41B76FD0F00991CE7 /* Build configuration list for PBXNativeTarget "Swift(CoreData)Tests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +433,7 @@
 				3615D7F61B76FD0F00991CE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -436,9 +441,10 @@
 		3615D7D61B76FD0F00991CE7 /* Swift_CoreData_.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				36A585641C6A32F400428873 /* Swift_CoreData_ 2.xcdatamodel */,
 				3615D7D71B76FD0F00991CE7 /* Swift_CoreData_.xcdatamodel */,
 			);
-			currentVersion = 3615D7D71B76FD0F00991CE7 /* Swift_CoreData_.xcdatamodel */;
+			currentVersion = 36A585641C6A32F400428873 /* Swift_CoreData_ 2.xcdatamodel */;
 			path = Swift_CoreData_.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

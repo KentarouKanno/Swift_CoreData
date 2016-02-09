@@ -10,6 +10,9 @@ import Foundation
 
 class DataModel: NSObject {
     
+    // Migration 追加④
+    var name: String!
+    
     var statement:String!
     var time:NSDate!
     
